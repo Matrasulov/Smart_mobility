@@ -1,5 +1,5 @@
 # Turtlesim installation
-
+ This installation is for **Humble** version of ubuntu(latest version).
 ## Initially we update the system
 ```
 parallels@ubuntu-linux-22-04-desktop:~$ sudo apt update
@@ -74,6 +74,34 @@ Use arrow keys to move the turtle.
 Use G|B|V|C|D|E|R|T keys to rotate to absolute orientations. 'F' to cancel a rotation.
 'Q' to quit.
 ```
+
+# RQT  installation
+```
+parallels@ubuntu-linux-22-04-desktop:~$ sudo apt install ~nros-humble-rqt*
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  blt fonts-lyx gdal-data ibverbs-providers libaacs0 libaec0
+  libaom3 libarmadillo10 libarpack2 libavcodec-dev
+```
+
+
+## We need source beforehand
+```
+parallels@ubuntu-linux-22-04-desktop:~$ source /opt/ros/humble/setup.sh
+```
+
+## Run RQT
+```
+parallels@ubuntu-linux-22-04-desktop:~$ rqt
+libGL error: pci id for fd 42: 1ab8:0010, driver (null)
+pci id for fd 43: 1ab8:0010, driver (null)
+Service "/turtle1/set_pen" is no longer available. Refresh the list of services
+Service "/turtle1/set_pen" is no longer available. Refresh the list of services
+Service "/turtle1/set_pen" is no longer available. Refresh the list of services
+```
+
 
 
 
