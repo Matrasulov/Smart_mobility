@@ -57,8 +57,18 @@ Check that the following packages have been built:
 parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ . install/setup.bash
 ```
 
-```
-parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ . install/setup.bash
-```
 
 
+
+## Try a demo
+
+With the environment sourced we can run executables built by colcon. Let’s run a subscriber node from the examples:
+
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ ros2 run examples_rclcpp_minimal_subscriber subscriber_member_function
+```
+In another terminal, let’s run a publisher node (don’t forget to source the setup script):
+
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ ros2 run examples_rclcpp_minimal_publisher publisher_member_function
+```
