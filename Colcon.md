@@ -33,6 +33,8 @@ Starting >>> examples_rclcpp_cbg_executor
 ## After the build is finished, we should see the build, install, and log directories:
 
 ```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ ls
+build  install  log  src
 .
 ├── build
 ├── install
@@ -44,3 +46,19 @@ Starting >>> examples_rclcpp_cbg_executor
 
 ## Running test
 ```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ colcon test
+Starting >>> examples_rclcpp_async_client
+[0.500s] ERROR:colcon.colcon_cmake.task.cmake.test:Failed to find the following files:
+- /home/parallels/ros2_ws/install/examples_rclcpp_async_client/share/examples_rclcpp_async_client/package.sh
+Check that the following packages have been built:
+- examples_rclcpp_async_client
+```
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ . install/setup.bash
+```
+
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ . install/setup.bash
+```
+
+
