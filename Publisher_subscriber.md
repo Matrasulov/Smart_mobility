@@ -208,3 +208,22 @@ Reading state information... Done
 E: Unable to locate package python3-rosedep2
 ```
 
+
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/py_pubsub/py_pubsub$ colcon build --packages-select py_pubsub
+[0.196s] WARNING:colcon.colcon_core.package_selection:ignoring unknown package 'py_pubsub' in --packages-select
+                     
+Summary: 0 packages finished [0.10s]
+```
+###### Open a new terminal, navigate to ros2_ws, and source the setup files:
+
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/py_pubsub/py_pubsub$ cd 
+parallels@ubuntu-linux-22-04-desktop:~$ cd ros2_ws
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ 
+```
+
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ . install/setup.bash
+```
+
