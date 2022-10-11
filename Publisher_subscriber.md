@@ -165,7 +165,7 @@ install_scripts=$base/lib/py_pubsub
 ```
 
 ## Writing the subscriber node
-### ***ros2_ws/src/py_pubsub/py_pubsub*** should be navigated.
+ ***ros2_ws/src/py_pubsub/py_pubsub*** should be navigated.
 
 ```
 parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/py_pubsub/py_pubsub$ wget https://raw.githubusercontent.com/ros2/examples/humble/rclpy/topics/minimal_subscriber/examples_rclpy_minimal_subscriber/subscriber_member_function.py
@@ -176,4 +176,35 @@ subscriber_membe 100%[=========>]   1.43K  --.-KB/s    in 0s
 2022-10-11 11:11:58 (26.5 MB/s) - ‘subscriber_member_function.py’ saved [1469/1469]
  
  ```
- 
+
+Now the directory should have these files:
+
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/py_pubsub/py_pubsub$ ls
+__init__.py                   subscriber_member_function.py
+publisher_member_function.py
+```
+
+### Add an entry point
+
+Reopen setup.py and add the entry point for the subscriber node below the publisher’s entry point. The entry_points field should now look like this:
+```
+entry_points={
+        'console_scripts': [
+                'talker = py_pubsub.publisher_member_function:main',
+                'listener = py_pubsub.subscriber_member_function:main',
+        ],
+},
+```
+  ## Build and run
+  
+  Checking wheter packages are installed or not
+  ```
+  parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/py_pubsub/py_pubsub$ sudo apt install python3-rosedep2
+[sudo] password for parallels: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package python3-rosedep2
+```
+
