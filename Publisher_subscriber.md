@@ -146,3 +146,11 @@ First the rclpy library is initialized, then the node is created, and then it â€
 </package>
 ```
 
+## Adding entry point
+
+Next step is to open ***setup.py*** file and and match the **maintainer**, **maintainer_email** variables.
+```
+zip_safe=True,
+    maintainer='Akbarjon',
+    maintainer_email='akbarjon3524@gmail.com',
+    
