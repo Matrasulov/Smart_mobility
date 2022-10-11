@@ -153,4 +153,27 @@ Next step is to open ***setup.py*** file and and match the **maintainer**, **mai
 zip_safe=True,
     maintainer='Akbarjon',
     maintainer_email='akbarjon3524@gmail.com',
+```
     
+    
+## Checking setup.cfg
+```
+[develop]
+script_dir=$base/lib/py_pubsub
+[install]
+install_scripts=$base/lib/py_pubsub
+```
+
+## Writing the subscriber node
+### ***ros2_ws/src/py_pubsub/py_pubsub*** should be navigated.
+
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/py_pubsub/py_pubsub$ wget https://raw.githubusercontent.com/ros2/examples/humble/rclpy/topics/minimal_subscriber/examples_rclpy_minimal_subscriber/subscriber_member_function.py
+.
+.
+subscriber_membe 100%[=========>]   1.43K  --.-KB/s    in 0s      
+
+2022-10-11 11:11:58 (26.5 MB/s) - ‘subscriber_member_function.py’ saved [1469/1469]
+ 
+ ```
+ 
