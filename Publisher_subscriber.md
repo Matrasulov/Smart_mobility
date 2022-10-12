@@ -251,3 +251,20 @@ parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ ros2 run py_pubsub listener
 
 
 ### Enter Ctrl+C in each terminal to stop the nodes from spinning
+```
+^CTraceback (most recent call last):
+  File "/home/parallels/ros2_ws/install/py_pubsub/lib/py_pubsub/talker", line 33, in <module>
+    sys.exit(load_entry_point('py-pubsub==0.0.0', 'console_scripts', 'talker')())
+  File "/home/parallels/ros2_ws/install/py_pubsub/lib/python3.10/site-packages/py_pubsub/publisher_member_function.py", line 43, in main
+    rclpy.spin(minimal_publisher)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 222, in spin
+    executor.spin_once()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 704, in spin_once
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 690, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 588, in _wait_for_ready_callbacks
+    wait_set.wait(timeout_nsec)
+KeyboardInterrupt
+[ros2run]: Interrupt
+```
