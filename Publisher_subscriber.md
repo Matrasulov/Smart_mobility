@@ -227,3 +227,24 @@ parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$
 parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ . install/setup.bash
 ```
 
+### Now run the talker node
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ ros2 run py_pubsub talker
+[INFO] [1665470419.289797166] [minimal_publisher]: Publishing: "Hello World: 0"
+[INFO] [1665470419.778375637] [minimal_publisher]: Publishing: "Hello World: 1"
+[INFO] [1665470420.277981583] [minimal_publisher]: Publishing: "Hello World: 2"
+```
+
+[1665471515.777608986] [minimal_subscriber]: 
+![image](https://user-images.githubusercontent.com/76453238/195022507-3be0b0f5-1cde-4cd8-940f-d573ea0a7229.png)
+
+### Open another terminal, source the setup files from inside ros2_ws again, and then start the listener node:
+
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ . install/setup.bash
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ ros2 run py_pubsub listener
+[INFO] [1665471514.284184880] [minimal_subscriber]: I heard: "Hello World: 2190"
+[INFO] [1665471514.777648718] [minimal_subscriber]: I heard: "Hello World: 2191"
+[INFO] [1665471515.277583334] [minimal_subscriber]: I heard: "Hello World: 2192"
+```
+![image](https://user-images.githubusercontent.com/76453238/195023042-8413df15-fe7d-47c3-aeda-f297cf5e1881.png)
