@@ -248,3 +248,6 @@ parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ ros2 run py_pubsub listener
 [INFO] [1665471515.277583334] [minimal_subscriber]: I heard: "Hello World: 2192"
 ```
 ![image](https://user-images.githubusercontent.com/76453238/195023042-8413df15-fe7d-47c3-aeda-f297cf5e1881.png)
+
+
+### Enter Ctrl+C in each terminal to stop the nodes from spinning
