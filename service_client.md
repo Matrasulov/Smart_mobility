@@ -95,3 +95,31 @@ don't forget to save it.
 
 
 ## Build and run
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ rosdep install -i --from-path src --rosdistro humble -y
+#All required rosdeps installed successfully
+```
+
+Navigate back to the root of your workspace, ros2_ws, and build your new package:
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/py_srvcli/py_srvcli$ colcon build --packages-select py_srvcli
+[0.161s] WARNING:colcon.colcon_core.package_selection:ignoring unknown package 'py_srvcli' in --packages-select
+                     
+Summary: 0 packages finished [0.08s]
+```
+Open a new terminal, navigate to ros2_ws, and source the setup files:
+```
+. install/setup.bash
+parallels@ubuntu-linux-22-04-desktop:~$ cd ros2_ws
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ . install/setup.bash
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ source /opt/ros/humble/setup.bash
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ ros2 run py_srvcli service
+Package 'py_srvcli' not found
+```
+
+Open another terminal and source the setup files from inside ros2_ws again. Start the client node, followed by any two integers separated by a space:
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ cd src/py_srvcli/py_srvcli
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/py_srvcli/py_srvcli$ ros2 run py_srvcli client 2 3
+Package 'py_srvcli' not found
+```
