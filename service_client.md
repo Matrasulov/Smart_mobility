@@ -39,3 +39,59 @@ maintainer_email='you@email.com',
 description='Python client server tutorial',
 license='Apache License 2.0',
 ```
+
+## Wrting the service node
+nside the ***ros2_ws/src/py_srvcli/py_srvcli*** directory, create a new file called **service_member_function.py** and paste the following code within:
+```
+GNU nano 6.2               service_member_function.py *                       
+
+from example_interfaces.srv import AddTwoInts
+
+import rclpy
+from rclpy.node import Node
+
+
+class MinimalService(Node):
+
+    def __init__(self):
+        super().__init__('minimal_service')
+        self.srv = self.create_service(AddTwoInts, 'add_two_ints', self.add_two>
+
+    def add_two_ints_callback(self, request, response):
+        response.sum = request.a + request.b
+        self.get_logger().info('Incoming request\na: %d b: %d' % (request.a, re>
+
+        return response
+
+
+def main(args=None):
+    rclpy.init(args=args)
+
+    minimal_service = MinimalService()
+
+    rclpy.spin(minimal_service)
+
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+
+```
+
+
+## Adiing entry point **setup.py** file
+enrtry points of ***setup.py*** file should look like this:
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/py_srvcli$ nano setup.py
+entry_points={
+    'console_scripts': [
+        'service = py_srvcli.service_member_function:main',
+        'client = py_srvcli.client_member_function:main',
+    ],
+},
+```
+don't forget to save it.
+
+
+## Build and run
