@@ -565,3 +565,55 @@ parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ cd src/py_srvcli/py_srvcli
 parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/py_srvcli/py_srvcli$ ros2 run py_srvcli client 2 3
 Package 'py_srvcli' not found
 ```
+  
+# Creating an action 
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ cd
+parallels@ubuntu-linux-22-04-desktop:~$ source /opt/ros/humble/setup.bash
+parallels@ubuntu-linux-22-04-desktop:~$ mkdir -p ros2_ws/src
+parallels@ubuntu-linux-22-04-desktop:~$ cd ros2_ws/src
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ ros2 pkg create action_tutorials_interfaces
+going to create a new package
+package name: action_tutorials_interfaces
+destination directory: /home/parallels/ros2_ws/src
+package format: 3
+version: 0.0.0
+description: TODO: Package description
+maintainer: ['parallels <akbarjon3524@gmail.com>']
+```
+<img width="736" alt="Screen Shot 2022-10-21 at 2 03 59 PM" src="https://user-images.githubusercontent.com/76453238/197116280-7a22458a-9aba-414e-84bf-ae44b759c7a4.png">
+
+
+### Create an action directory in our ROS 2 package action_tutorials_interfaces:
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ cd action_tutorials_interfaces
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src/action_tutorials_interfaces$ mkdir action
+```
+
+### Within the action directory, create a file called Fibonacci.action with the following contents:
+```
+int32 order
+---
+int32[] sequence
+---
+int32[] partial_sequence
+```
+
+
+```
+arallels@ubuntu-linux-22-04-desktop:~$ cd ros2_ws
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ colcon build
+Starting >>> py_srvcli
+--- stderr: py_srvcli                   
+package init file 'py_srvcli/__init__.py' not found (or not a regular file)
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+error: can't copy 'resource/py_srvcli': doesn't exist or not a regular file
+---
+Failed   <<< py_srvcli [0.55s, exited with code 1]
+
+Summary: 0 packages finished [0.73s]
+  1 package failed: py_srvcli
+  1 package had stderr output: py_srvcli
+```
+<img width="715" alt="Screen Shot 2022-10-21 at 2 10 41 PM" src="https://user-images.githubusercontent.com/76453238/197117008-9e9d4d32-9b74-41ca-90a4-080a6dc32161.png">
