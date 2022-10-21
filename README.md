@@ -617,3 +617,63 @@ Summary: 0 packages finished [0.73s]
   1 package had stderr output: py_srvcli
 ```
 <img width="715" alt="Screen Shot 2022-10-21 at 2 10 41 PM" src="https://user-images.githubusercontent.com/76453238/197117008-9e9d4d32-9b74-41ca-90a4-080a6dc32161.png">
+
+# Writing an action server and client
+```
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws$ cd src
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ nano fibonacci_action_server.py
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ python3 fibonacci_action_server.py
+Traceback (most recent call last):
+  File "/home/parallels/ros2_ws/src/fibonacci_action_server.py", line 1, in <module>
+    import rclpy
+ModuleNotFoundError: No module named 'rclpy'
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ python3
+Python 3.10.4 (main, Jun 29 2022, 12:14:53) [GCC 11.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import rclpy
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'rclpy'
+>>> 
+[1]+  Stopped                 python3
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ source 
+action_tutorials_interfaces/ py_srvcli/
+examples/                    ros2_ws/
+fibonacci_action_server.py   setup.py
+package.xml                  tutorial_interfaces/
+py_pubsub/                   
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ source source /opt/ros/humble/setup.bash
+bash: source: No such file or directory
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ python3 fibonacci_action_server.py
+Traceback (most recent call last):
+  File "/home/parallels/ros2_ws/src/fibonacci_action_server.py", line 1, in <module>
+    import rclpy
+ModuleNotFoundError: No module named 'rclpy'
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ source /
+bin/        home/       mnt/        run/        swap.img    var/
+boot/       lib/        opt/        sbin/       sys/        
+dev/        lost+found/ proc/       snap/       tmp/        
+etc/        media/      root/       srv/        usr/        
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ source /
+bin/        home/       mnt/        run/        swap.img    var/
+boot/       lib/        opt/        sbin/       sys/        
+dev/        lost+found/ proc/       snap/       tmp/        
+etc/        media/      root/       srv/        usr/        
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ source /opt/ros/humble/setup.bash
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ python3 fibonacci_action_server.py
+Traceback (most recent call last):
+  File "/home/parallels/ros2_ws/src/fibonacci_action_server.py", line 5, in <module>
+    from action_tutorials_interfaces.action import Fibonacci
+ImportError: cannot import name 'Fibonacci' from 'action_tutorials_interfaces.action' (unknown location)
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ python3 fibonacci_action_server.py
+Traceback (most recent call last):
+  File "/home/parallels/ros2_ws/src/fibonacci_action_server.py", line 5, in <module>
+    from action_tutorials_interfaces.action import Fibonacci
+ImportError: cannot import name 'Fibonacci' from 'action_tutorials_interfaces.action' (unknown location)
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ python3 fibonacci_action_server.py
+Traceback (most recent call last):
+  File "/home/parallels/ros2_ws/src/fibonacci_action_server.py", line 5, in <module>
+    from action_tutorials_interfaces.action import Fibonacci
+ImportError: cannot import name 'Fibonacci' from 'action_tutorials_interfaces.action' (unknown location)
+parallels@ubuntu-linux-22-04-desktop:~/ros2_ws/src$ 
+```
